@@ -1,0 +1,52 @@
+{% extends 'restaurant/index.html' %}
+{% block body %}
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Manage Facility</title>
+
+
+
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="1001" height="415" border="1">
+    <tr>
+      <th scope="row">SL NO </th>
+      <td><div align="center">FACILITY NAME </div></td>
+      <td><div align="center">DESCRIPTION</div></td>
+      <td><div align="center">IMAGE</div></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{ forloop.counter}}</th>
+      <td>{{i.facility}}</td>
+      <td>{{i.description}}</td>
+      <td><img src="{{i.image.url}}" width="100px" height="100px"></td>
+      <td><label></label>
+
+      <div align="center"></div>
+      <a href="{% url 'delete' id=i.id %}">DELETE</a></td>
+    </tr>
+
+      {% endfor %}
+    <tr>
+      <th colspan="5" scope="row"> <label>
+        <a href="add_facility">ADD</a></td>
+      </label>      </th>
+    </tr>
+  </table>
+  <div align="left"></div>
+</form>
+</body>
+</html>
+
+{% endblock %}

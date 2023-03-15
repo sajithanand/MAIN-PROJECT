@@ -1,0 +1,203 @@
+
+
+
+
+
+
+
+
+
+{% extends 'sample.html' %}
+{% block body %}
+
+<html lang="en">
+<head>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+    }
+    body{
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(168, 223, 231);
+      line-height: 1.0;
+      margin-right: 100%;
+      justify-content: center;
+      background-size: cover;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      
+
+    }
+    a{
+      text-decoration: none;
+
+    }
+    .container{
+      width: 1100px;
+      max-width: 50px;
+      margin: 1 auto;
+      margin-left:1000px;
+      justify-content: center;
+      
+      
+
+    }
+
+    .container .title{
+      font-size: 4.5rem;
+      padding: 1000px;
+      color: #edddeb;
+      margin-bottom: 3rem;
+      margin-right: 500px;
+      text-transform:uppercase;
+      text-align: center;
+      align-items: center;
+      
+    }
+
+
+    .row{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-right:300px;
+      
+     
+
+
+    }
+
+    .card{
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 21rem;
+      background-color: #edddeb;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      padding: 10px 20px;
+      cursor: pointer;
+      gap: 10px;
+      margin-right: 400px;
+      transition: 1.3s;
+      justify-content: spacebetween;
+      height: 375px;
+      flex: 1;
+      flex-basis: 300px;
+      flex-grow: 0;
+      background: #d9e1bf;
+      border: 2px solid #fff;
+      margin: 0px 90px 50px 40px;
+      cursor: pointer;
+      transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+      overflow: hidden;
+      position: relative;
+      width: 60px;
+    }
+    
+    .card:hover {
+      transform: translateY(-30px);
+    }
+
+
+
+    .btn{
+      display: inline-block;
+      background: red;
+      color: antiquewhite;
+      text-align: center;
+      color: aliceblue;
+      padding: 10px 80px;
+      border-radius: 10px;
+      padding: 5px 70px;
+      font-size: 20px;
+
+    }
+
+
+  .first{
+    padding: 30px;
+    display: block;
+    margin-left: 300px;
+    max-width: 100%;
+    font-size: 90%;
+    font-family: Arial Black;
+    
+
+  }
+
+  .name{
+    font-family: Serif;
+    font-size: 10px;
+  }
+
+  .button{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline-block;
+    background: green;
+    color: rgb(10, 10, 9);
+    text-align: center;
+    color: white;
+    padding: 5px 70px;
+    border-radius: 5px;
+    margin-left: 900px;
+    cursor: pointer;
+
+  }
+
+
+
+  </style>
+  <title>MANAGE FACILITY</title>
+</head>
+<body>
+  <div class="w3-container">
+    <div class="first">
+      <h3 class="title">MANAGE FACILITY</h3>
+     
+  </div>
+    
+    
+      <a href="add_facility" class="button" >ADD</a>
+   
+    
+     <div class="row">
+            {% for i in val %}
+            
+                 <div class="col-sm-4"  style="margin-left: 0.2cm;">
+                     
+                     <div class="card" style="width: 18rem;">
+                         <img src="{{i.image.url}}" style="width: 100%;height: 150px;"  class="card-img-top" alt="...">
+
+                         <div class="name">
+                         <h1>{{i.facility}}</h1>
+                        </div>
+                         {{i.description}}
+                         {{ security.remarks }}
+                        
+                       
+                       <div class="card-body" style="margin-bottom: 20%;">
+                         <a href="{% url 'delete' id=i.id %}" class="btn btn-primary" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ">DELETE</a></td>
+                         
+                       </div>
+                     </div>
+                 </div>
+                
+                
+  
+                 {% endfor %}
+
+
+</body>
+</html>
+{% endblock %} 
+
+
+

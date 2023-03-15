@@ -1,0 +1,325 @@
+{% extends 'user/user_home.html' %}
+{% block body %}
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
+  
+  height: 40%;
+  transition: 1.3s;
+  text-align: center;
+  
+  margin-top: 5%;
+  margin-left: 50px;
+
+  
+}
+
+.card:hover {
+  transform: translateY(-30px);
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+.cat{
+  border-radius:10px;
+}
+
+
+.s {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 0.2s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.t {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 0.4s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.u {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 0.6s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.d {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 0.8s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.y {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 1s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+.z {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 1.2s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+
+.m{
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 1.4s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.a {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 1.6s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+.t {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 1.8s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+.e {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 2s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+.r {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 2.2s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+.i {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 2.4s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+.a {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 2.6s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+.l {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 2.8s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+.s {
+  color: black;
+  opacity: 0;
+  animation: pass 2s ease-in-out infinite;
+  animation-delay: 3s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.d1 {
+  color: black;
+  opacity: 0;
+  animation: pass1 2s ease-in-out infinite;
+  animation-delay: 3s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+.d2 {
+  color: black;
+  opacity: 0;
+  animation: pass1 2s ease-in-out infinite;
+  animation-delay: 3.2s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+.d3 {
+  color: black;
+  opacity: 0;
+  animation: pass1 2s ease-in-out infinite;
+  animation-delay: 3.4s;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+}
+
+@keyframes pass {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pass1 {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+class-group{
+  align-items: right;
+}
+
+
+</style>
+</head>
+<body>
+  <form id="form1" name="form1" method="post" action="search">
+
+<div class="card p-2" style="width: 100%;">
+
+  <div class="loader"  style="text-align: center; font-size:xx-large; margin-top:3px"><b>
+    <span class="s">V</span>
+    <span class="t">I</span>
+    <span class="u">E</span>
+    <span class="d">W</span>
+    <span class="y">&nbsp;</span>
+    <span class="z">R</span>
+    <span class="m">E</span>
+    <span class="a">S</span>
+    <span class="t">T</span>
+    <span class="e">A</span>
+    <span class="r">U</span>
+    <span class="i">R</span>
+    <span class="a">A</span>
+    <span class="l">N</span>
+    <span class="s">T</span>
+    <span class="d1">S</span>
+    <span class="d2">.</span>
+    <span class="d3">.</span>
+  </b>
+  </div>
+
+  <div class="input-group" >
+    <div class="form-outline"  >
+      <input type="text" id="form1" name="txt" class="form-control" placeholder="search by place"  style="padding-left: 150px;" />
+      <label class="form-label" for="form1" style="width: 110px;"></label>
+    </div>
+    <input type="submit" style="width: 100px;height: 40px;" class="btn btn-primary" value="search"/>
+  </div> 
+<div class="row">
+{% for i in val %}
+
+
+
+<div class="card col-md-3"><center>
+
+  <img src="/media/{{i.image}}" alt="John" width="160" height="150" style="margin-top:10px; width: 100%;"></center>
+  <h1>{{i.rname}}</h1>
+  <p class="title"></p>
+  <p><img src="../../static/images/address.png" width="20px" height="20px">{{i.address}} </p>
+  <P><img src="../../static/images/phone_number.jpg" width="20px" height="20px">{{i.phone_number}}</P>
+  <div style="margin: 24px 0;">
+    {% comment %} <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a>{% endcomment %}
+  </div>
+<div class="cat">
+  <p><a href="{% url 'viewresults' id=i.id   %}" class="btn btn-primary" style="width: 100%;">VIEW_MORE</a></p>
+  
+  <p><a href="https://maps.google.com/maps?q={{i.lattitude}},{{i.longitude}}" class="btn btn-primary" style="width: 100%;">LOCATE</a></p>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</form>
+</body>
+</html>
+{% endblock %} 
+
+
+
+
+
+
+
+
+
+
+
+

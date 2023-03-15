@@ -1,0 +1,85 @@
+{% extends 'admin/admin_hom.html' %}
+{% block body %}
+
+<html lang="en">
+<head>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: aliceblue;
+      line-height: 1.5;
+
+    }
+    a{
+      text-decoration: none;
+
+    }
+    .container{
+      width: 1100px;
+      max-width: 50%;
+      margin: 0 auto;
+    }
+    .row{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+
+    }
+
+    .card{
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 21rem;
+      background: rgb(228, 224, 224);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      padding: 10px 20px;
+      align-self: normal;
+
+    }
+
+    .card.btn{
+      display: inline-block;
+      background: green;
+      color: antiquewhite;
+      text-align: center;
+      color: aliceblue;
+      padding: 10px 20px;
+      border-radius: 5px;
+
+    }
+
+  </style>
+  <title>View more</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="card">
+        <img src="{{val.image.url }}"/>
+        <h4>{{val.rname}}</h4>
+        <p>{{val.details}}</p>
+        <p><img src="../../static/images/address.png" width="20px" height="20px">{{val.address}}</p>
+        <P><img src="../../static/images/phone_number.jpg" width="20px" height="20px">{{val.phone_number}}</P>
+        <P><img src="../../static/images/working_time.png" width="20px" height="20px">{{val.time1}} - {{val.time2}}</P>        
+        <P><img src="../../static/images/license.png" width="20px" height="20px">{{val.license_image}}</P></div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+</body>
+</html>
+{% endblock %} 

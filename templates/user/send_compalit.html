@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/send_complaint">
+  <table width="908" height="378" border="1">
+    <tr>
+      <th scope="row">SELECT RESTAURANT </th>
+      <td><label>
+        <select name="restaurants">
+
+        {% for i in val %}
+        <option value="{{i.id}}">{{i.rname}}</option>
+        {% endfor %}
+        </select>
+        
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">COMPLAINT</th>
+      <td><label>
+        <input type="text" name="compliant" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit2" value="SEND" />
+        <br/>
+        <a href="{% url 'View_reply'  %}">VIEW REPLY</a></label></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

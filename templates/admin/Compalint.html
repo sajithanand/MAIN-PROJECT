@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<table width="933" height="412" border="1">
+  <tr>
+    <th height="202" colspan="6" scope="col"> <div align="right"><label></label>
+      
+        <label></label>
+        <p align="left"><strong>VIEW COMPLAINTS</strong></p>
+        <p>SEARCH BY NAME </p>
+        <label>
+      <input type="text" name="textfield" />
+      <input type="submit" name="Submit" value="SEARCH" />
+      </label> 
+      
+      </div></th>
+  </tr>
+ 
+  <tr>
+    <th scope="col">Sl No </th>
+    <th scope="col">User name </th>
+    <th scope="col">Restaurant name </th>
+    <th scope="col">Complaint</th>
+    <th scope="col">Date</th>
+    <th scope="col"><a href="#"></a></th>
+  </tr>
+  {% for i in val %}
+  
+  <tr>
+    <td height="130">{{forloop.counter}}</td>
+    <td>{{i.uid.name}}</td>
+    <td>{{i.rest_id.rname}}</td>
+    <td>{{i.complaint}}</td>
+    <td>{{i.Date}}</td>
+    <td>  
+      {% if i.reply == 'pending' %}
+      
+      <div align="center"><a href="{% url 'reply' id=i.id %}">REPLY</a></div>
+    
+    
+    {% else %}reply sended
+    
+    {% endif %}
+    
+    
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+</form>
+</body>
+</html>

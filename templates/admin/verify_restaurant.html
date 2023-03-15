@@ -1,0 +1,173 @@
+
+{% extends 'admin/admin_hom.html' %}
+{% block body %}
+
+
+
+
+<style type="text/css">
+  body
+  {
+      counter-reset: Serial;          
+  }
+
+  tr td:first-child:before
+  {
+    counter-increment: Serial;      
+    content: counter(Serial); 
+  }
+  .btn{
+    border-radius: 16px;
+  }
+
+</style>
+
+
+<head>
+  <title>Verify Restaurants</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+</head>
+<style>
+
+
+h2 {
+font-family: 'Indie Flower', cursive;
+
+  color: #03A9F4;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+}
+
+table {
+  width: 50%;
+}
+
+table caption {
+    padding: .5em 0;
+}
+
+table.dataTable th
+{
+  align: center;
+  background-color: rgb(0, 7, 8);
+  color: #fff;
+}
+table.dataTable td {
+  background-color: #fff;
+}
+
+.p {
+  text-align: center;
+  padding-top: 140px;
+  font-size: 14px;
+}
+
+img{
+  transition: 2s;
+  border-radius:20px;
+   width:100px;
+   height:100px;
+  
+}
+
+img:hover{
+transform: scale(1.1);
+}
+</style>
+
+
+  
+<div class="container">
+
+    
+  <div class="card p-5">
+    <h1 align="center">VERIFY RESTAURANTS</h1>
+    <div class="col-xs-12">
+      <table  id="table_id" class="table table-bordered table-hover dt-responsive">
+        <thead>
+          <tr>
+            <th scope="col">Sl No</th>
+            <th scope="col">RESTAURANT NAME </th>            
+            <th scope="col">IMAGE</th>
+            <th scope="col">LOCATION</th>
+            <th scope="col">LICENSE NUMBER</th>
+            <th scope="col">status</th>
+            <th scope="col"></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in val %}
+        <tr>
+          <td></td>
+          <td>{{i.rname}}</td>
+          <td> <img src="{{i.image.url }}"/></td>
+          <td><a href="https://maps.google.com/maps?q={{i.lattitude}},{{i.longitude}}" class="btn btn-outline-primary">Get location</td>
+          <td>{{i.license_image}}</td>
+          
+          <td>{% if i.l_id.user_type == 'pending' %}
+            
+            
+            <a href="{% url 'accept' id=i.l_id.id %}" class="btn btn-outline-warning" >ACCEPT</a>
+
+            <a href="{% url 'rejected' id=i.l_id.id %}"  class="btn btn-outline-danger" >REJECT</a></p>
+                  {% elif i.l_id.user_type  == 'reject' %} REJECTED 
+                  {% else %} ACCEPTED
+                  {% endif %}
+            <td><a href="{% url 'view_more' id=i.id %}" class="btn btn-primary">View More</td>  
+          </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script>
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+
+</script>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
